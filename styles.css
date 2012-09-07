@@ -34,3 +34,17 @@ html {
 #input-box {
 	width: 100%;
 }
+
+/*Info, Success, Warning, Danger*/
+.user-0 {
+	color: #49afcd;
+}
+.user-1 {
+	color: #51a351;
+}
+.user-2 {
+	color: #faa732;
+}
+.user-3 {
+	color: #da4f49;
+}

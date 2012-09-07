@@ -1,6 +1,4 @@
 var users = ["John Lennon", "Paul McCartney", "George Harrison", "Ringo Starr"];
-// Info, Success, Warning, Danger
-var user_colors = ["#49afcd", "#51a351", "#faa732", "#da4f49"];
 var current_uid = 0;
 
 $(document).bind("keyup keydown", function(e) {
@@ -8,8 +6,7 @@ $(document).bind("keyup keydown", function(e) {
 });
 
 function newMessage(uid, message) {
-	$("#chat").append('<tr><td class="user">'+users[uid]+'</td><td class="message">'+message+'</td></tr>');
-	$("#chat tr:last .user").css("color", user_colors[uid])
+	$("#chat").append('<tr><td class="user user-'+uid+'">'+users[uid]+'</td><td class="message">'+message+'</td></tr>');
 	$(window).scrollTop($(document).height());
 }
 
@@ -19,7 +16,7 @@ function listMembers() {
 		if(code != "") {
 			code += " "
 		}
-		code += '<span style="color: '+user_colors[i]+';">'+users[i]+'</span>'
+		code += '<span class="user-'+i+'">'+users[i]+'</span>'
 	}
 	return code
 }
