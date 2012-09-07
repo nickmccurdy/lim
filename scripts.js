@@ -46,6 +46,7 @@ function updateListMembers() {
 	}
 	$("#member-list").html(code);
 	$("#member-list .user-"+current_uid).addClass("active");
+	window.document.title = "LIM: " + users.join(", ");
 }
 
 function switchUser() {
