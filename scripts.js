@@ -1,17 +1,12 @@
-var users = []
-users.push("Dave");
-users.push("HAL");
-var current_user = 0;
+var users = ["Nicolas", "Test"]
+var current_uid = 0;
 
 $(document).bind("keyup keydown", function(e) {
 	shifted = e.shiftKey;
 });
 
-function newMessage() {
-	var message = $("#input-box").val();
-	message = message.replace(/\n/g, "<br>");
-	$("#chat").append("<div><div class='user'>butts</div><div class='message'>"+message+"</div></div>");
-	$("#input-box").val("");
+function newMessage(uid, message) {
+	$("#chat").append('<tr><td class="user">'+users[uid]+'</td><td class="message">'+message+'</td></tr>');
 }
 
 //when something is typed in the input box
@@ -21,7 +16,9 @@ $("#input-box").keyup(function(e) {
 		//if there is a message in the input box
 		if($("#input-box").val != "") {
 			//submit a new IM
-			newMessage();
+			var message = $("#input-box").val().replace(/\n/g, "");
+			newMessage(current_uid, message);
+			$("#input-box").val("");
 		}
 		//if the input box is empty
 		else {
