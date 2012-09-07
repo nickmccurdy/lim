@@ -5,7 +5,13 @@ $(document).bind("keyup keydown", function(e) {
 	shifted = e.shiftKey;
 });
 
-function newMessage(uid, message) {
+function postMessage() {
+	var message = $("#input").val().replace(/\n/g, "");
+	showMessage(current_uid, message);
+	$("#input").val("");
+}
+
+function showMessage(uid, message) {
 	$("#chat").append('<tr><td class="user user-'+uid+'">'+users[uid]+'</td><td class="message">'+message+'</td></tr>');
 	$(window).scrollTop($(document).height());
 }
@@ -39,9 +45,7 @@ $("#input").keyup(function(e) {
 		//if there is a message in the input box
 		if($("#input").val().replace(/\n/g, "") != "") {
 			//submit a new IM
-			var message = $("#input").val().replace(/\n/g, "");
-			newMessage(current_uid, message);
-			$("#input").val("");
+			postMessage();
 		}
 		//if the input box is empty
 		else {
@@ -53,8 +57,8 @@ $("#input").keyup(function(e) {
 
 $(document).ready(function() {
 	updateListMembers();
-	newMessage(0, "Hello!");
-	newMessage(1, "Goodbye!");
-	newMessage(2, "Hello!");
-	newMessage(3, "Goodbye!");
+	showMessage(0, "Hello!");
+	showMessage(1, "Goodbye!");
+	showMessage(2, "Hello!");
+	showMessage(3, "Goodbye!");
 });
