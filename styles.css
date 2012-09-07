@@ -1,9 +1,6 @@
 body {
 	height: 100%;
 }
-html {
-	height: 100%;
-}
 
 #container {
 	width: 750px;
@@ -11,28 +8,25 @@ html {
 	margin-right: auto;
 }
 
-#chat {
-	border: 1px solid #888;
+#chat, #chat tr, #chat td {
+	border: 1px dashed #757c82;
 }
 
-#chat .user {
+.user {
+	text-align: right;
 	vertical-align: top;
-	display: inline-block;
-	border: 1px solid #888;
 	width: 125px;
 	padding: 4px;
 }
 
-#chat .message {
-	display: inline-block;
-	border: 1px solid #888;
-	padding: 4px;
+.message {
+	text-align: left;
 	/* container width - user width - 22 */
 	width: 603px;
 }
 
-#input-box {
-	width: 100%;
+#input-container * {
+	vertical-align: top;
 }
 
 /*Info, Success, Warning, Danger*/
