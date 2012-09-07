@@ -19,6 +19,7 @@ function updateListMembers() {
 		code += '<span class="user-'+i+'">'+users[i]+'</span>';
 	}
 	$("#member-list").html(code);
+	$("#member-list .user-"+current_uid).addClass("active");
 }
 
 //when something is typed in the input box

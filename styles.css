@@ -42,3 +42,20 @@ body {
 .user-3 {
 	color: #da4f49;
 }
+.user-0.active, .user-1.active, .user-2.active, .user-3.active {
+	color: #fff;
+	border-radius: 5px;
+	padding: 5px;
+}
+.user-0.active {
+	background-color: #49afcd;
+}
+.user-1.active {
+	background-color: #51a351;
+}
+.user-2.active {
+	background-color: #faa732;
+}
+.user-3.active {
+	background-color: #da4f49;
+}
