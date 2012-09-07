@@ -13,7 +13,7 @@ body {
 }
 
 .user {
-	text-align: right;
+	text-align: right !important;
 	vertical-align: top;
 	width: 125px;
 	padding: 4px;
@@ -27,6 +27,14 @@ body {
 
 #input-container * {
 	vertical-align: top;
+}
+
+#chat {
+	margin-bottom: 0px;
+}
+
+#toolbar {
+	margin: 15px 0px;
 }
 
 /*Info, Success, Warning, Danger*/
