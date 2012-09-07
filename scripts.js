@@ -22,12 +22,22 @@ function updateListMembers() {
 	$("#member-list .user-"+current_uid).addClass("active");
 }
 
+function switchUser() {
+	if(current_uid < users.length-1) {
+		current_uid++;
+	}
+	else {
+		current_uid = 0;
+	}
+	updateListMembers();
+}
+
 //when something is typed in the input box
 $("#input").keyup(function(e) {
 	//if it was return (without shift)
 	if(e.keyCode == 13 && !shifted) {
 		//if there is a message in the input box
-					if($("#input").val != "") {
+					if($("#input").val().replace(/\n/g, "") != "") {
 						//submit a new IM
 						var message = $("#input").val().replace(/\n/g, "");
 						newMessage(current_uid, message);
