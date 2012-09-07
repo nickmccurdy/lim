@@ -10,15 +10,15 @@ function newMessage(uid, message) {
 }
 
 //when something is typed in the input box
-$("#input-box").keyup(function(e) {
+$("#input").keyup(function(e) {
 	//if it was return (without shift)
 	if(e.keyCode == 13 && !shifted) {
 		//if there is a message in the input box
-		if($("#input-box").val != "") {
+		if($("#input").val != "") {
 			//submit a new IM
-			var message = $("#input-box").val().replace(/\n/g, "");
+			var message = $("#input").val().replace(/\n/g, "");
 			newMessage(current_uid, message);
-			$("#input-box").val("");
+			$("#input").val("");
 		}
 		//if the input box is empty
 		else {
