@@ -1,5 +1,9 @@
 var users = ["John Lennon", "Paul McCartney", "George Harrison", "Ringo Starr"];
 var current_uid = 0;
+var options = {
+	switch_user_after_posted_message: true,
+	switch_user_after_blank_message: true
+}
 
 $(document).bind("keyup keydown", function(e) {
 	shifted = e.shiftKey;
@@ -47,11 +51,16 @@ $("#input").keyup(function(e) {
 		if($("#input").val().replace(/\n/g, "") != "") {
 			//submit a new IM
 			postMessage();
+			if(options.switch_user_after_posted_message) {
+				switchUser();
+			}
 		}
 		//if the input box is empty
 		else {
 			//switch active user
-			switchUser();
+			if(options.switch_user_after_blank_message) {
+				switchUser();
+			}
 		}
 	};
 });
