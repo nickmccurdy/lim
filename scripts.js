@@ -13,6 +13,17 @@ function newMessage(uid, message) {
 	$(window).scrollTop($(document).height());
 }
 
+function listMembers() {
+	var code = ""
+	for(var i=0; i<users.length; i++) {
+		if(code != "") {
+			code += " "
+		}
+		code += '<span style="color: '+user_colors[i]+';">'+users[i]+'</span>'
+	}
+	return code
+}
+
 //when something is typed in the input box
 $("#input").keyup(function(e) {
 	//if it was return (without shift)
@@ -33,6 +44,7 @@ $("#input").keyup(function(e) {
 });
 
 $(document).ready(function() {
+	$("#member-list").html(listMembers());
 	newMessage(0, "Hello!");
 	newMessage(1, "Goodbye!");
 	newMessage(2, "Hello!");
