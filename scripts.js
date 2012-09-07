@@ -7,6 +7,7 @@ $(document).bind("keyup keydown", function(e) {
 
 function newMessage(uid, message) {
 	$("#chat").append('<tr><td class="user">'+users[uid]+'</td><td class="message">'+message+'</td></tr>');
+	$(window).scrollTop($(document).height());
 }
 
 //when something is typed in the input box
