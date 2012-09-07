@@ -9,6 +9,7 @@ function postMessage() {
 	var message = $("#input").val().replace(/\n/g, "");
 	showMessage(current_uid, message);
 	$("#input").val("");
+	$("#input").focus();
 }
 
 function showMessage(uid, message) {
@@ -57,6 +58,9 @@ $("#input").keyup(function(e) {
 
 $(document).ready(function() {
 	updateListMembers();
+	$("#send-button").click(function() {
+		postMessage();
+	})
 	showMessage(0, "Hello!");
 	showMessage(1, "Goodbye!");
 	showMessage(2, "Hello!");
