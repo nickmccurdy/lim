@@ -37,19 +37,19 @@ $("#input").keyup(function(e) {
 	//if it was return (without shift)
 	if(e.keyCode == 13 && !shifted) {
 		//if there is a message in the input box
-					if($("#input").val().replace(/\n/g, "") != "") {
-						//submit a new IM
-						var message = $("#input").val().replace(/\n/g, "");
-						newMessage(current_uid, message);
-						$("#input").val("");
-					}
-					//if the input box is empty
-					else {
-						//switch active user
-						switchUser();
-					}
-				};
-			});
+		if($("#input").val().replace(/\n/g, "") != "") {
+			//submit a new IM
+			var message = $("#input").val().replace(/\n/g, "");
+			newMessage(current_uid, message);
+			$("#input").val("");
+		}
+		//if the input box is empty
+		else {
+			//switch active user
+			switchUser();
+		}
+	};
+});
 
 $(document).ready(function() {
 	updateListMembers();
