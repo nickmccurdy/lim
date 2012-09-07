@@ -10,15 +10,15 @@ function newMessage(uid, message) {
 	$(window).scrollTop($(document).height());
 }
 
-function listMembers() {
-	var code = ""
+function updateListMembers() {
+	var code = "";
 	for(var i=0; i<users.length; i++) {
 		if(code != "") {
-			code += " "
+			code += " ";
 		}
-		code += '<span class="user-'+i+'">'+users[i]+'</span>'
+		code += '<span class="user-'+i+'">'+users[i]+'</span>';
 	}
-	return code
+	$("#member-list").html(code);
 }
 
 //when something is typed in the input box
@@ -26,22 +26,22 @@ $("#input").keyup(function(e) {
 	//if it was return (without shift)
 	if(e.keyCode == 13 && !shifted) {
 		//if there is a message in the input box
-		if($("#input").val != "") {
-			//submit a new IM
-			var message = $("#input").val().replace(/\n/g, "");
-			newMessage(current_uid, message);
-			$("#input").val("");
-		}
-		//if the input box is empty
-		else {
-			//switch active user
-			switchUser();
-		}
-	};
-});
+					if($("#input").val != "") {
+						//submit a new IM
+						var message = $("#input").val().replace(/\n/g, "");
+						newMessage(current_uid, message);
+						$("#input").val("");
+					}
+					//if the input box is empty
+					else {
+						//switch active user
+						switchUser();
+					}
+				};
+			});
 
 $(document).ready(function() {
-	$("#member-list").html(listMembers());
+	updateListMembers();
 	newMessage(0, "Hello!");
 	newMessage(1, "Goodbye!");
 	newMessage(2, "Hello!");
