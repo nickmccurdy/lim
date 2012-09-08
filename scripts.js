@@ -59,15 +59,15 @@ function switchUser() {
 	updateListMembers();
 }
 
-//when something is typed in the input box
-$("#input").keyup(function(e) {
-	//if it was return (without shift)
-	if(e.keyCode == 13 && !shifted) {
-		postMessage();
-	};
-});
 
 $(document).ready(function() {
+	//when something is typed in the input box
+	$("#input").keyup(function(e) {
+		//if it was return (without shift)
+		if(e.keyCode == 13 && !shifted) {
+			postMessage();
+		};
+	});
 	updateListMembers();
 	$("#send-button").click(function() {
 		postMessage();
