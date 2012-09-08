@@ -9,6 +9,10 @@ body {
 	margin-right: auto;
 }
 
+h1 {
+	text-align: center;
+}
+
 #chat, #chat tr, #chat td {
 	border: 1px dashed #757c82;
 }
@@ -24,6 +28,10 @@ body {
 	text-align: left;
 	/* container width - user width - 22 */
 	width: 603px;
+}
+
+#input-container {
+	text-align: center;
 }
 
 #input-container * {
