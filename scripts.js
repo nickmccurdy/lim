@@ -61,7 +61,7 @@ function switchUser() {
 
 function setTopic() {
 	topic = prompt("New topic:");
-	if(topic != "") {
+	if(topic != "" && topic != null) {
 		$("#topic").html(topic);
 		updateListMembers();
 	}
