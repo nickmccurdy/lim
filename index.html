@@ -15,11 +15,14 @@
 
 <body>
 <div id="container">
-	<h1>Local Instant Messenger</h1>
+	<h1 id="topic">Local Instant Messenger</h1>
 	<div id="toolbar">
 		Members: <span id="member-list"></span>
 		<button class="btn pull-right" href="#" data-target="#settings-modal" data-toggle="modal">
 			<i class="icon-cog icon-white"></i> Settings
+		</button>
+		<button id="topic-button" class="btn pull-right" href="#">
+			<i class="icon-pencil icon-white"></i> Set Topic
 		</button>
 	</div>
 	<table id="chat" class="table"></table>

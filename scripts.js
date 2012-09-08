@@ -46,7 +46,7 @@ function updateListMembers() {
 	}
 	$("#member-list").html(code);
 	$("#member-list .user-"+current_uid).addClass("active");
-	window.document.title = "LIM: " + users.join(", ");
+	window.document.title = $("#topic").html()+": " + users.join(", ");
 }
 
 function switchUser() {
@@ -59,6 +59,13 @@ function switchUser() {
 	updateListMembers();
 }
 
+function setTopic() {
+	topic = prompt("New topic:");
+	if(topic != "") {
+		$("#topic").html(topic);
+		updateListMembers();
+	}
+}
 
 $(document).ready(function() {
 	//when something is typed in the input box
@@ -71,6 +78,9 @@ $(document).ready(function() {
 	updateListMembers();
 	$("#send-button").click(function() {
 		postMessage();
+	})
+	$("#topic-button").click(function() {
+		setTopic();
 	})
 	showMessage(0, "Hello!");
 	showMessage(1, "Goodbye!");
