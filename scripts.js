@@ -42,7 +42,7 @@ function updateListMembers() {
 		if(code != "") {
 			code += " ";
 		}
-		code += '<span class="user-'+i+'">'+users[i]+'</span>';
+		code += '<span class="user user-'+i+'">'+users[i]+'</span>';
 	}
 	$("#member-list").html(code);
 	$("#member-list .user-"+current_uid).addClass("active");
