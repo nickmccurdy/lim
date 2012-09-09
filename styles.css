@@ -47,6 +47,9 @@ h1 {
 }
 
 /*Info, Success, Warning, Danger*/
+.user {
+	border-radius: 5px;
+}
 .user-0 {
 	color: #49afcd;
 }
@@ -61,7 +64,6 @@ h1 {
 }
 .user.active {
 	color: #fff;
-	border-radius: 5px;
 	padding: 5px;
 }
 .user-0.active {
