@@ -22,7 +22,7 @@ h1 {
 .user {
 	text-align: right !important;
 	vertical-align: top;
-	width: 125px;
+	width: 150px;
 	padding: 4px;
 	border-radius: 5px;
 }
@@ -42,10 +42,12 @@ h1 {
 
 /* conversation */
 #conversation {
+	border: 1px solid #757c82;
+	border-bottom: none;
 	margin-bottom: 0px;
 }
 #conversation td {
-	border: 1px dashed #757c82;
+	border-bottom: 1px solid #757c82;
 }
 .message {
 	text-align: left;
