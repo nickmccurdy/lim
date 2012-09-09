@@ -1,63 +1,30 @@
+/* major page elements */
 body {
 	height: 100%;
 	color: #bbb;
 	margin-bottom: 50px;
 }
-
 #container {
 	max-width: 750px;
 	margin-left: auto;
 	margin-right: auto;
 }
 
+/* topic */
 h1 {
 	text-align: center;
 }
 
-#chat td {
-	border: 1px dashed #757c82;
+/* toolbar */
+#toolbar {
+	margin: 15px 0px;
 }
-
 .user {
 	text-align: right !important;
 	vertical-align: top;
 	width: 125px;
 	padding: 4px;
 }
-
-.message {
-	text-align: left;
-	/* container width - user width - 22 */
-	width: 603px;
-}
-
-#input-bar {
-	text-align: center;
-	position: fixed;
-	bottom: 0px;
-	width: 750px;
-}
-
-#input-box {
-	overflow: hidden;
-}
-
-#input {
-	width: 100%;
-}
-
-#send-button {
-	float: right;
-}
-
-#chat {
-	margin-bottom: 0px;
-}
-
-#toolbar {
-	margin: 15px 0px;
-}
-
 /*Info, Success, Warning, Danger*/
 .user {
 	border-radius: 5px;
@@ -89,4 +56,34 @@ h1 {
 }
 .user-3.active {
 	background-color: #da4f49;
+}
+
+/* chat */
+#chat {
+	margin-bottom: 0px;
+}
+#chat td {
+	border: 1px dashed #757c82;
+}
+.message {
+	text-align: left;
+	/* container width - user width - 22 */
+	width: 603px;
+}
+
+/* input bar */
+#input-bar {
+	text-align: center;
+	position: fixed;
+	bottom: 0px;
+	width: 750px;
+}
+#input-box {
+	overflow: hidden;
+}
+#input {
+	width: 100%;
+}
+#send-button {
+	float: right;
 }
