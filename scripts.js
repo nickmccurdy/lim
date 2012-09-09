@@ -32,8 +32,10 @@ function postMessage() {
 }
 
 function showMessage(uid, message) {
-	$("#conversation").append('<tr><td class="user user-'+uid+'">'+users[uid]+'</td><td class="message">'+message+'</td></tr>');
-	$(window).scrollTop($(document).height());
+	message_code = '<tr><td class="user user-'+uid+'">'+users[uid]+'</td><td class="message">'+message+'</td></tr>';
+	$(message_code).hide().appendTo("#conversation").slideDown(200, function() {
+		$(window).scrollTop($(document).height());
+	});
 }
 
 function updateListMembers() {
