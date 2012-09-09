@@ -60,7 +60,7 @@ function switchUser() {
 }
 
 function setTopic() {
-	topic = prompt("New topic:");
+	topic = $("#topic-input").val();
 	if(topic != "" && topic != null) {
 		$("#topic").html(topic);
 		updateListMembers();
@@ -76,6 +76,10 @@ $(document).ready(function() {
 		};
 	});
 	updateListMembers();
+	$("#settings-save-button").click(function() {
+		setTopic();
+		$("#settings-modal").modal("hide");
+	})
 	$("#send-button").click(function() {
 		postMessage();
 	})
