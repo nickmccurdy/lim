@@ -40,11 +40,11 @@ h1 {
 .user-2.active { background-color: #faa732; }
 .user-3.active { background-color: #da4f49; }
 
-/* chat */
-#chat {
+/* conversation */
+#conversation {
 	margin-bottom: 0px;
 }
-#chat td {
+#conversation td {
 	border: 1px dashed #757c82;
 }
 .message {

@@ -32,7 +32,7 @@ function postMessage() {
 }
 
 function showMessage(uid, message) {
-	$("#chat").append('<tr><td class="user user-'+uid+'">'+users[uid]+'</td><td class="message">'+message+'</td></tr>');
+	$("#conversation").append('<tr><td class="user user-'+uid+'">'+users[uid]+'</td><td class="message">'+message+'</td></tr>');
 	$(window).scrollTop($(document).height());
 }
 
