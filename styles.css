@@ -1,6 +1,7 @@
 body {
 	height: 100%;
 	color: #bbb;
+	margin-bottom: 50px;
 }
 
 #container {
@@ -32,6 +33,9 @@ h1 {
 
 #input-container {
 	text-align: center;
+	position: fixed;
+	bottom: 0px;
+	width: 750px;
 }
 
 #input-container * {
