@@ -31,15 +31,23 @@ h1 {
 	width: 603px;
 }
 
-#input-container {
+#input-bar {
 	text-align: center;
 	position: fixed;
 	bottom: 0px;
 	width: 750px;
 }
 
-#input-container * {
-	vertical-align: top;
+#input-box {
+	overflow: hidden;
+}
+
+#input {
+	width: 100%;
+}
+
+#send-button {
+	float: right;
 }
 
 #chat {
