@@ -67,6 +67,13 @@ function setTopic() {
 	}
 }
 
+function saveSettings() {
+	setTopic();
+	options.switch_user_after_posted_message = $("#switch_user_after_posted_message_box").attr("checked");
+	options.switch_user_after_blank_message = $("#switch_user_after_blank_message_box").attr("checked");
+	$("#settings-modal").modal("hide");
+}
+
 $(document).ready(function() {
 	//when something is typed in the input box
 	$("#input").keyup(function(e) {
@@ -77,8 +84,7 @@ $(document).ready(function() {
 	});
 	updateListMembers();
 	$("#settings-save-button").click(function() {
-		setTopic();
-		$("#settings-modal").modal("hide");
+		saveSettings();
 	})
 	$("#send-button").click(function() {
 		postMessage();
