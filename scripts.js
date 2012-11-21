@@ -1,4 +1,4 @@
-var users = ["John Lennon", "Paul McCartney", "George Harrison", "Ringo Starr"];
+var users = ["User 1", "User 2", "User 3", "User 4"];
 var current_uid = 0;
 var options = {
 	switch_user_after_posted_message: true,
@@ -39,16 +39,32 @@ function showMessage(uid, message) {
 }
 
 function updateListMembers() {
-	var code = "";
-	for(var i=0; i<users.length; i++) {
-		if(code != "") {
-			code += " ";
-		}
-		code += '<span class="user user-'+i+'">'+users[i]+'</span>';
-	}
-	$("#member-list").html(code);
+	$("#member-list").html(memberList("brief"));
 	$("#member-list .user-"+current_uid).addClass("active");
+	$("#member-list-settings").html(memberList("settings"));
 	window.document.title = $("#topic").html()+": " + users.join(", ");
+}
+
+function memberList(mode) {
+	list_code = "";
+	for(var i=0; i<users.length; i++) {
+		if(list_code != "") {
+			list_code += " ";
+		}
+		switch(mode) {
+			case "brief":
+				member_code = '<span class="user user-'+i+'">'+users[i]+'</span>';
+				break;
+			case "settings":
+				member_code = '<li><span class="user user-'+i+'">'+users[i]+'</span></li>';
+				break;
+		}
+		list_code += member_code
+	}
+	if(mode == "settings") {
+		list_code = "<ul>"+list_code+"</ul>";
+	}
+	return list_code;
 }
 
 function switchUser() {

@@ -1,17 +1,24 @@
 /* major page elements */
+html {
+	height: 100%;
+}
 body {
 	height: 100%;
 	color: #bbb;
-	margin-bottom: 50px;
+	height: 100%;
 }
 #container {
 	max-width: 750px;
 	margin-left: auto;
 	margin-right: auto;
+	vertical-align: bottom !important;
+	height: 100%;
+	padding-bottom: 50px;
 }
 
 /* topic */
 h1 {
+	margin: 0px;
 	text-align: center;
 }
 
