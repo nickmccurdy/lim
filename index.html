@@ -1,71 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><meta charset="utf-8">
-	<!-- basic info -->
-	<title>Local Instant Messenger</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<!-- css -->
-	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" type="text/css">
-	<link rel="stylesheet" href="styles.css" type="text/css">
-	<!-- icons -->
-	<link rel="icon" href="favicon.png">
-	<link rel="apple-touch-icon" href="mobile_icon.png">
-</head>
+	<head>
+		<meta charset="utf-8">
+		<!-- basic info -->
+		<title>Local Instant Messenger</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!-- css -->
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" type="text/css">
+		<link rel="stylesheet" href="styles.css" type="text/css">
+		<!-- icons -->
+		<link rel="icon" href="favicon.png">
+		<link rel="apple-touch-icon" href="mobile_icon.png">
+	</head>
 
-<body>
-<div id="container">
-	<h1 id="topic">Local Instant Messenger</h1>
-	<div id="toolbar" class="well well-small">
-		Members: <span id="member-list"></span>
-		<button class="btn btn-default pull-right" href="#" data-target="#settings-modal" data-toggle="modal">
-			<i class="glyphicon glyphicon-cog"></i> Settings
-		</button>
-	</div>
-	<ul id="conversation" class="list-group"></ul>
-	<div id="input-bar" class="input-group">
-		<input id="input" class="form-control" type="text" autofocus>
-		<span class="input-group-btn">
-			<button id="send-button" class="btn btn-primary">Send</button>
-		</span>
-	</div>
-</div>
-
-<div id="settings-modal" class="modal fade">
-	<div class="modal-dialog">
-		<div class="modal-content">
-			<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="icon-remove icon-white"></i></button>
-				<h3>Settings</h3>
+	<body>
+		<div id="container">
+			<h1 id="topic">Local Instant Messenger</h1>
+			<div id="toolbar" class="well well-small">
+				Members: <span id="member-list"></span>
+				<button class="btn btn-default pull-right" href="#" data-target="#settings-modal" data-toggle="modal">
+					<i class="glyphicon glyphicon-cog"></i> Settings
+				</button>
 			</div>
-			<div class="modal-body">
-				<h4>Topic</h4>
-				<input type="text" id="topic-input"></input>
-
-				<h4>Members</h4>
-				<div id="member-list-settings"></div>
-
-				<h4>Interface</h4>
-				<label for="switch_user_after_posted_message_box">
-					<input type="checkbox" id="switch_user_after_posted_message_box" checked>
-					Switch user after a message is posted
-				</label>
-				<label for="switch_user_after_blank_message_box">
-					<input type="checkbox" id="switch_user_after_blank_message_box" checked>
-					Switch user after a blank message is entered
-				</label>
-			</div>
-			<div class="modal-footer">
-				<a href="#" class="btn btn-default" data-dismiss="modal" aria-hidden="true">Close</a>
-				<a href="#" class="btn btn-primary" id="settings-save-button">Save</a>
+			<ul id="conversation" class="list-group"></ul>
+			<div id="input-bar" class="input-group">
+				<input id="input" class="form-control" type="text" autofocus>
+				<span class="input-group-btn">
+					<button id="send-button" class="btn btn-primary">Send</button>
+				</span>
 			</div>
 		</div>
-	</div>
-</div>
 
-<!-- scripts -->
-<script src="http://code.jquery.com/jquery.min.js"></script>
-<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-<script src="scripts.js"></script>
-<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-</body>
+		<div id="settings-modal" class="modal fade">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="icon-remove icon-white"></i></button>
+						<h3>Settings</h3>
+					</div>
+					<div class="modal-body">
+						<h4>Topic</h4>
+						<input type="text" id="topic-input"></input>
+
+						<h4>Members</h4>
+						<div id="member-list-settings"></div>
+
+						<h4>Interface</h4>
+						<label for="switch_user_after_posted_message_box">
+							<input type="checkbox" id="switch_user_after_posted_message_box" checked>
+							Switch user after a message is posted
+						</label>
+						<label for="switch_user_after_blank_message_box">
+							<input type="checkbox" id="switch_user_after_blank_message_box" checked>
+							Switch user after a blank message is entered
+						</label>
+					</div>
+					<div class="modal-footer">
+						<a href="#" class="btn btn-default" data-dismiss="modal" aria-hidden="true">Close</a>
+						<a href="#" class="btn btn-primary" id="settings-save-button">Save</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- scripts -->
+		<script src="http://code.jquery.com/jquery.min.js"></script>
+		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+		<script src="scripts.js"></script>
+		<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	</body>
 </html>
