@@ -63,9 +63,36 @@
 			</div>
 		</div>
 
+		<script id="message-template" type="text/template">
+			<li class="list-group-item">
+				<h4 class="list-group-item-heading user-<%= uid %>"><%= user %></h4>
+				<p class="list-group-item-text message"><%= message %></p>
+			</li>
+		</script>
+
+		<script id="user-template" type="text/template">
+			<% if (mode === 'settings') { %>
+				<ul>
+			<% } %>
+
+			<% _.each(users, function(user, uid) { %>
+				<% if (mode === 'brief') { %>
+					<span class="user user-<%= uid %>"><%= user %></span>
+				<% } %>
+				<% if (mode === 'settings') { %>
+					<li><span class="user user-<%= uid %>"><%= user %></span></li>
+				<% } %>
+			<% }); %>
+
+			<% if (mode === 'settings') { %>
+				</ul>
+			<% } %>
+		</script>
+
 		<!-- scripts -->
 		<script src="http://code.jquery.com/jquery.min.js"></script>
 		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore-min.js"></script>
 		<script src="scripts.js"></script>
 		<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 	</body>

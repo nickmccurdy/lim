@@ -32,7 +32,11 @@ function postMessage() {
 }
 
 function showMessage(uid, message) {
-	message_code = '<li class="list-group-item"><h4 class="list-group-item-heading user-'+uid+'">'+users[uid]+'</h4><p class="list-group-item-text message">'+message+'</p></li>';
+	message_code = _.template($('#message-template').html(), {
+		uid: uid,
+		user: users[uid],
+		message: message
+	});
 	$(message_code).hide().appendTo('#conversation').slideDown(200, function() {
 		$(window).scrollTop($(document).height());
 	});
@@ -46,25 +50,10 @@ function updateListMembers() {
 }
 
 function memberList(mode) {
-	list_code = '';
-	for(var i=0; i<users.length; i++) {
-		if(list_code !== '') {
-			list_code += ' ';
-		}
-		switch(mode) {
-			case 'brief':
-				member_code = '<span class="user user-'+i+'">'+users[i]+'</span>';
-				break;
-			case 'settings':
-				member_code = '<li><span class="user user-'+i+'">'+users[i]+'</span></li>';
-				break;
-		}
-		list_code += member_code;
-	}
-	if(mode == 'settings') {
-		list_code = '<ul>'+list_code+'</ul>';
-	}
-	return list_code;
+	return _.template($('#user-template').html(), {
+		mode: mode,
+		user: users
+	});
 }
 
 function switchUser() {
