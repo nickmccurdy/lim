@@ -4,7 +4,6 @@ html {
 }
 body {
 	height: 100%;
-	color: #bbb;
 	height: 100%;
 }
 #container {
@@ -34,7 +33,6 @@ h1 {
 	border-radius: 5px;
 }
 .user.active {
-	color: #fff;
 	padding: 5px;
 }
 /*Info, Success, Warning, Danger*/
@@ -42,6 +40,9 @@ h1 {
 .user-1 { color: #51a351; }
 .user-2 { color: #faa732; }
 .user-3 { color: #da4f49; }
+.user-0.active, .user-1.active, .user-2.active, .user-3.active {
+	color: inherit;
+}
 .user-0.active { background-color: #49afcd; }
 .user-1.active { background-color: #51a351; }
 .user-2.active { background-color: #faa732; }
