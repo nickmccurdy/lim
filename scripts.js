@@ -32,7 +32,7 @@ function postMessage() {
 }
 
 function showMessage(uid, message) {
-	message_code = '<tr><td class="user user-'+uid+'"">'+users[uid]+'</td><td class="message">'+message+'</td></tr>';
+	message_code = '<li class="list-group-item"><h4 class="list-group-item-heading user-'+uid+'">'+users[uid]+'</h4><p class="list-group-item-text message">'+message+'</p></li>';
 	$(message_code).hide().appendTo('#conversation').slideDown(200, function() {
 		$(window).scrollTop($(document).height());
 	});

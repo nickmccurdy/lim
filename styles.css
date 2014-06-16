@@ -50,17 +50,7 @@ h1 {
 
 /* conversation */
 #conversation {
-	border: 1px solid #757c82;
-	border-bottom: none;
 	margin-bottom: 0px;
-}
-#conversation td {
-	border-bottom: 1px solid #757c82;
-}
-.message {
-	text-align: left;
-	/* container width - user width - 22 */
-	width: 603px;
 }
 
 /* input bar */
