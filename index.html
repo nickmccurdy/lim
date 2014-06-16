@@ -5,7 +5,7 @@
 	<title>Local Instant Messenger</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- css -->
-	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootswatch/2.3.2/slate/bootstrap.min.css" type="text/css">
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootswatch/3.1.1/slate/bootstrap.min.css" type="text/css">
 	<link rel="stylesheet" href="styles.css" type="text/css">
 	<!-- icons -->
 	<link rel="icon" href="favicon.png">
@@ -17,8 +17,8 @@
 	<h1 id="topic">Local Instant Messenger</h1>
 	<div id="toolbar" class="well well-small">
 		Members: <span id="member-list"></span>
-		<button class="btn pull-right" href="#" data-target="#settings-modal" data-toggle="modal">
-			<i class="icon-cog icon-white"></i> Settings
+		<button class="btn btn-default pull-right" href="#" data-target="#settings-modal" data-toggle="modal">
+			<i class="glyphicon glyphicon-cog"></i> Settings
 		</button>
 	</div>
 	<table id="conversation" class="table"></table>
@@ -28,37 +28,41 @@
 	</div>
 </div>
 
-<div id="settings-modal" class="modal hide fade">
-	<div class="modal-header">
-		<button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="icon-remove icon-white"></i></button>
-		<h3>Settings</h3>
-	</div>
-	<div class="modal-body">
-		<h4>Topic</h4>
-		<input type="text" id="topic-input"></input>
+<div id="settings-modal" class="modal fade">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="icon-remove icon-white"></i></button>
+				<h3>Settings</h3>
+			</div>
+			<div class="modal-body">
+				<h4>Topic</h4>
+				<input type="text" id="topic-input"></input>
 
-		<h4>Members</h4>
-		<div id="member-list-settings"></div>
+				<h4>Members</h4>
+				<div id="member-list-settings"></div>
 
-		<h4>Interface</h4>
-		<label for="switch_user_after_posted_message_box">
-			<input type="checkbox" id="switch_user_after_posted_message_box" checked>
-			Switch user after a message is posted
-		</label>
-		<label for="switch_user_after_blank_message_box">
-			<input type="checkbox" id="switch_user_after_blank_message_box" checked>
-			Switch user after a blank message is entered
-		</label>
-	</div>
-	<div class="modal-footer">
-		<a href="#" class="btn" data-dismiss="modal" aria-hidden="true">Close</a>
-		<a href="#" class="btn btn-primary" id="settings-save-button">Save</a>
+				<h4>Interface</h4>
+				<label for="switch_user_after_posted_message_box">
+					<input type="checkbox" id="switch_user_after_posted_message_box" checked>
+					Switch user after a message is posted
+				</label>
+				<label for="switch_user_after_blank_message_box">
+					<input type="checkbox" id="switch_user_after_blank_message_box" checked>
+					Switch user after a blank message is entered
+				</label>
+			</div>
+			<div class="modal-footer">
+				<a href="#" class="btn btn-default" data-dismiss="modal" aria-hidden="true">Close</a>
+				<a href="#" class="btn btn-primary" id="settings-save-button">Save</a>
+			</div>
+		</div>
 	</div>
 </div>
 
 <!-- scripts -->
 <script src="http://code.jquery.com/jquery.min.js"></script>
-<script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 <script src="scripts.js"></script>
 <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 </body>
