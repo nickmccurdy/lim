@@ -65,17 +65,7 @@ h1 {
 
 /* input bar */
 #input-bar {
-	text-align: center;
 	position: fixed;
 	bottom: 0px;
 	width: 750px;
-}
-#input-box {
-	overflow: hidden;
-}
-#input {
-	width: 100%;
-}
-#send-button {
-	float: right;
 }
