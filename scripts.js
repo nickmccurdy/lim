@@ -3,7 +3,7 @@ var current_uid = 0;
 var options = {
 	switch_user_after_posted_message: true,
 	switch_user_after_blank_message: true
-}
+};
 
 $(document).bind("keyup keydown", function(e) {
 	shifted = e.shiftKey;
@@ -11,7 +11,7 @@ $(document).bind("keyup keydown", function(e) {
 
 function postMessage() {
 	//if there is a message in the input box
-	if($("#input").val().replace(/\n/g, "") != "") {
+	if($("#input").val().replace(/\n/g, "") !== "") {
 		//submit a new IM
 		var message = $("#input").val().replace(/\n/g, "");
 		showMessage(current_uid, message);
@@ -48,7 +48,7 @@ function updateListMembers() {
 function memberList(mode) {
 	list_code = "";
 	for(var i=0; i<users.length; i++) {
-		if(list_code != "") {
+		if(list_code !== "") {
 			list_code += " ";
 		}
 		switch(mode) {
@@ -59,7 +59,7 @@ function memberList(mode) {
 				member_code = '<li><span class="user user-'+i+'">'+users[i]+'</span></li>';
 				break;
 		}
-		list_code += member_code
+		list_code += member_code;
 	}
 	if(mode == "settings") {
 		list_code = "<ul>"+list_code+"</ul>";
@@ -79,7 +79,7 @@ function switchUser() {
 
 function setTopic() {
 	topic = $("#topic-input").val();
-	if(topic != "" && topic != null) {
+	if(topic) {
 		$("#topic").html(topic);
 		updateListMembers();
 	}
@@ -98,18 +98,18 @@ $(document).ready(function() {
 		//if it was return (without shift)
 		if(e.keyCode == 13 && !shifted) {
 			postMessage();
-		};
+		}
 	});
 	updateListMembers();
 	$("#settings-save-button").click(function() {
 		saveSettings();
-	})
+	});
 	$("#send-button").click(function() {
 		postMessage();
-	})
+	});
 	$("#topic-button").click(function() {
 		setTopic();
-	})
+	});
 	showMessage(0, "Hello!");
 	showMessage(1, "Goodbye!");
 	showMessage(2, "Hello!");
