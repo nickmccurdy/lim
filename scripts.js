@@ -44,15 +44,13 @@ function showMessage(uid, message) {
 }
 
 function updateListMembers() {
-  $('#member-list').html(memberList('brief'));
+  $('#member-list').html(memberList());
   $('#member-list .user-'+currentUID).addClass('active');
-  $('#member-list-settings').html(memberList('settings'));
   window.document.title = $('#topic').html()+': ' + users.join(', ');
 }
 
-function memberList(mode) {
+function memberList() {
   return _.template($('#user-template').html(), {
-    mode: mode,
     user: users
   });
 }

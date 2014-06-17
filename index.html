@@ -42,9 +42,6 @@
             <h4>Topic</h4>
             <input type="text" id="topic-input"></input>
 
-            <h4>Members</h4>
-            <div id="member-list-settings"></div>
-
             <h4>Interface</h4>
             <label for="switch_user_after_posted_message_box">
               <input type="checkbox" id="switch_user_after_posted_message_box" checked>
@@ -71,22 +68,13 @@
     </script>
 
     <script id="user-template" type="text/template">
-      <% if (mode === 'settings') { %>
-        <ul>
-      <% } %>
+      <ul>
 
       <% _.each(users, function(user, uid) { %>
-        <% if (mode === 'brief') { %>
-          <span class="user user-<%= uid %>"><%= user %></span>
-        <% } %>
-        <% if (mode === 'settings') { %>
-          <li><span class="user user-<%= uid %>"><%= user %></span></li>
-        <% } %>
+        <li><span class="user user-<%= uid %>"><%= user %></span></li>
       <% }); %>
 
-      <% if (mode === 'settings') { %>
-        </ul>
-      <% } %>
+      </ul>
     </script>
 
     <!-- scripts -->
