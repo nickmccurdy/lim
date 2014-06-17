@@ -16,13 +16,21 @@
   <body>
     <div class="container">
       <h1 id="topic">Local Instant Messenger</h1>
-      <div class="well well-small">
-        Members: <span id="member-list"></span>
-        <button class="btn btn-default pull-right" href="#" data-target="#settings-modal" data-toggle="modal">
-          <i class="glyphicon glyphicon-cog"></i> Settings
-        </button>
+
+      <div class="row">
+        <div class="col-md-9">
+          <ul id="conversation" class="list-group"></ul>
+        </div>
+        <div class="col-md-3">
+          <div class="well well-small">
+            Members: <span id="member-list"></span>
+            <button class="btn btn-default pull-right" href="#" data-target="#settings-modal" data-toggle="modal">
+              <i class="glyphicon glyphicon-cog"></i> Settings
+            </button>
+          </div>
+        </div>
       </div>
-      <ul id="conversation" class="list-group"></ul>
+
       <div id="input-bar" class="input-group">
         <input id="input" class="form-control" type="text" autofocus>
         <span class="input-group-btn">
