@@ -10,11 +10,12 @@ $(document).bind('keyup keydown', function(e) {
 });
 
 function postMessage() {
+	var trimmedInput = $('#input').val().trim();
+
 	//if there is a message in the input box
-	if($('#input').val().replace(/\n/g, '') !== '') {
+	if(trimmedInput) {
 		//submit a new IM
-		var message = $('#input').val().replace(/\n/g, '');
-		showMessage(currentUID, message);
+		showMessage(currentUID, trimmedInput);
 		$('#input').val('');
 		$('#input').focus();
 		//switch active user
