@@ -1,8 +1,8 @@
 var users = ['User 1', 'User 2', 'User 3', 'User 4'];
-var current_uid = 0;
+var currentUID = 0;
 var options = {
-	switch_user_after_posted_message: true,
-	switch_user_after_blank_message: true
+	switchUserAfterPostedMessage: true,
+	switchUserAfterBlankMessage: true
 };
 
 $(document).bind('keyup keydown', function(e) {
@@ -14,37 +14,37 @@ function postMessage() {
 	if($('#input').val().replace(/\n/g, '') !== '') {
 		//submit a new IM
 		var message = $('#input').val().replace(/\n/g, '');
-		showMessage(current_uid, message);
+		showMessage(currentUID, message);
 		$('#input').val('');
 		$('#input').focus();
 		//switch active user
-		if(options.switch_user_after_posted_message) {
+		if(options.switchUserAfterPostedMessage) {
 			switchUser();
 		}
 	}
 	//if the input box is empty
 	else {
 		//switch active user
-		if(options.switch_user_after_blank_message) {
+		if(options.switchUserAfterBlankMessage) {
 			switchUser();
 		}
 	}
 }
 
 function showMessage(uid, message) {
-	message_code = _.template($('#message-template').html(), {
+	messageCode = _.template($('#message-template').html(), {
 		uid: uid,
 		user: users[uid],
 		message: message
 	});
-	$(message_code).hide().appendTo('#conversation').slideDown(200, function() {
+	$(messageCode).hide().appendTo('#conversation').slideDown(200, function() {
 		$(window).scrollTop($(document).height());
 	});
 }
 
 function updateListMembers() {
 	$('#member-list').html(memberList('brief'));
-	$('#member-list .user-'+current_uid).addClass('active');
+	$('#member-list .user-'+currentUID).addClass('active');
 	$('#member-list-settings').html(memberList('settings'));
 	window.document.title = $('#topic').html()+': ' + users.join(', ');
 }
@@ -57,11 +57,11 @@ function memberList(mode) {
 }
 
 function switchUser() {
-	if(current_uid < users.length-1) {
-		current_uid++;
+	if(currentUID < users.length-1) {
+		currentUID++;
 	}
 	else {
-		current_uid = 0;
+		currentUID = 0;
 	}
 	updateListMembers();
 }
@@ -76,8 +76,8 @@ function setTopic() {
 
 function saveSettings() {
 	setTopic();
-	options.switch_user_after_posted_message = $('#switch_user_after_posted_message_box').attr('checked');
-	options.switch_user_after_blank_message = $('#switch_user_after_blank_message_box').attr('checked');
+	options.switchUserAfterPostedMessage = $('#switch_user_after_posted_message_box').attr('checked');
+	options.switchUserAfterBlankMessage = $('#switch_user_after_blank_message_box').attr('checked');
 	$('#settings-modal').modal('hide');
 }
 
