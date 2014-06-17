@@ -83,6 +83,8 @@ function saveSettings() {
 }
 
 $(document).ready(function() {
+	updateListMembers();
+
 	//when something is typed in the input box
 	$('#input').keyup(function(e) {
 		//if it was return (without shift)
@@ -90,16 +92,10 @@ $(document).ready(function() {
 			postMessage();
 		}
 	});
-	updateListMembers();
-	$('#settings-save-button').click(function() {
-		saveSettings();
-	});
-	$('#send-button').click(function() {
-		postMessage();
-	});
-	$('#topic-button').click(function() {
-		setTopic();
-	});
+	$('#settings-save-button').click(saveSettings);
+	$('#send-button').click(postMessage);
+	$('#topic-button').click(setTopic);
+
 	showMessage(0, 'Hello!');
 	showMessage(1, 'Goodbye!');
 	showMessage(2, 'Hello!');
