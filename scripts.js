@@ -12,8 +12,8 @@ app.controller('ConversationController', function ($scope) {
   $scope.currentUID = 0;
 
   // options
-  $scope.switchUserAfterPostedMessage = true;
-  $scope.switchUserAfterBlankMessage = true;
+  $scope.switchAfterMessage = true;
+  $scope.switchAfterBlankMessage = true;
 
   function switchUser() {
     if($scope.currentUID < $scope.users.length-1) {
@@ -37,14 +37,14 @@ app.controller('ConversationController', function ($scope) {
       document.getElementById('input').focus();
 
       //switch active user
-      if($scope.switchUserAfterPostedMessage) {
+      if($scope.switchAfterMessage) {
         switchUser();
       }
     }
     //if the input box is empty
     else {
       //switch active user
-      if($scope.switchUserAfterBlankMessage) {
+      if($scope.switchAfterBlankMessage) {
         switchUser();
       }
     }
