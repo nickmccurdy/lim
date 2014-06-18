@@ -1,25 +1,9 @@
-/* major page elements */
-html {
-  height: 100%;
-}
-body {
-  height: 100%;
-}
-
 /* topic */
 h1 {
   text-align: center;
 }
 
 /* toolbar */
-.user {
-  vertical-align: top;
-  padding: 4px;
-  border-radius: 5px;
-}
-.user.active {
-  padding: 5px;
-}
 /*Info, Success, Warning, Danger*/
 .user-0 { color: #49afcd; }
 .user-1 { color: #51a351; }
