@@ -1,24 +1,24 @@
 /* major page elements */
 html {
-	height: 100%;
+  height: 100%;
 }
 body {
-	height: 100%;
+  height: 100%;
 }
 
 /* topic */
 h1 {
-	text-align: center;
+  text-align: center;
 }
 
 /* toolbar */
 .user {
-	vertical-align: top;
-	padding: 4px;
-	border-radius: 5px;
+  vertical-align: top;
+  padding: 4px;
+  border-radius: 5px;
 }
 .user.active {
-	padding: 5px;
+  padding: 5px;
 }
 /*Info, Success, Warning, Danger*/
 .user-0 { color: #49afcd; }
@@ -26,7 +26,7 @@ h1 {
 .user-2 { color: #faa732; }
 .user-3 { color: #da4f49; }
 .user-0.active, .user-1.active, .user-2.active, .user-3.active {
-	color: inherit;
+  color: inherit;
 }
 .user-0.active { background-color: #49afcd; }
 .user-1.active { background-color: #51a351; }
