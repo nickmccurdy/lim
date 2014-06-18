@@ -59,17 +59,21 @@
           </div>
           <div class="modal-body">
             <h4>Topic</h4>
-            <input type="text" ng-model="topic">
+            <input type="text" class="form-control" ng-model="topic">
 
             <h4>Interface</h4>
-            <label for="switchUserAfterPostedMessage">
-              <input type="checkbox" ng-model="options.switchUserAfterPostedMessage">
-              Switch user after a message is posted
-            </label>
-            <label for="switchUserAfterBlankMessage">
-              <input type="checkbox" ng-model="options.switchUserAfterBlankMessage">
-              Switch user after a blank message is entered
-            </label>
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" ng-model="options.switchUserAfterPostedMessage">
+                Switch user after a message is posted
+              </label>
+            </div>
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" ng-model="options.switchUserAfterBlankMessage">
+                Switch user after a blank message is entered
+              </label>
+            </div>
           </div>
           <div class="modal-footer">
             <a href="#" class="btn btn-default" data-dismiss="modal" aria-hidden="true">Close</a>
