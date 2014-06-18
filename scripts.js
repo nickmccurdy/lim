@@ -15,7 +15,6 @@ app.controller('ConversationController', function ($scope) {
       user: $scope.users[uid],
       message: message
     });
-    $(window).scrollTop($(document).height());
   }
 
   function switchUser() {
@@ -34,7 +33,7 @@ app.controller('ConversationController', function ($scope) {
       // TODO: check if we need to .trim() the input
       showMessage($scope.currentUID, $scope.input);
       $scope.input = '';
-      $('#input').focus();
+      document.getElementById('input').focus();
 
       //switch active user
       if($scope.options.switchUserAfterPostedMessage) {
