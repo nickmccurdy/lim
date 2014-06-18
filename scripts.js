@@ -1,20 +1,19 @@
 var app = angular.module('Local Instant Messenger', []);
 
 app.controller('ConversationController', function ($scope) {
-  $scope.messages = [];
+  $scope.messages = [
+    { user: 'User 1', message: 'Hello!'},
+    { user: 'User 2', message: 'Goodbye!'},
+    { user: 'User 3', message: 'Hello!'},
+    { user: 'User 4', message: 'Goodbye!'}
+  ];
+
   $scope.users = ['User 1', 'User 2', 'User 3', 'User 4'];
   $scope.currentUID = 0;
 
   // options
   $scope.switchUserAfterPostedMessage = true;
   $scope.switchUserAfterBlankMessage = true;
-
-  function showMessage (uid, message) {
-    $scope.messages.push({
-      user: $scope.users[uid],
-      message: message
-    });
-  }
 
   function switchUser() {
     if($scope.currentUID < $scope.users.length-1) {
@@ -30,7 +29,10 @@ app.controller('ConversationController', function ($scope) {
     if($scope.input) {
       //submit a new IM
       // TODO: check if we need to .trim() the input
-      showMessage($scope.currentUID, $scope.input);
+      $scope.messages.push({
+        user: $scope.users[$scope.currentUID],
+        message: $scope.input
+      });
       $scope.input = '';
       document.getElementById('input').focus();
 
@@ -47,9 +49,4 @@ app.controller('ConversationController', function ($scope) {
       }
     }
   };
-
-  showMessage(0, 'Hello!');
-  showMessage(1, 'Goodbye!');
-  showMessage(2, 'Hello!');
-  showMessage(3, 'Goodbye!');
 });
