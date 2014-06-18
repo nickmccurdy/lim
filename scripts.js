@@ -5,6 +5,11 @@ app.controller('ConversationController', function ($scope) {
   $scope.users = ['User 1', 'User 2', 'User 3', 'User 4'];
   $scope.currentUID = 0;
 
+  $scope.options = {
+    switchUserAfterPostedMessage: true,
+    switchUserAfterBlankMessage: true
+  };
+
   function showMessage (uid, message) {
     $scope.messages.push({
       user: $scope.users[uid],
@@ -22,11 +27,6 @@ app.controller('ConversationController', function ($scope) {
     }
   }
 
-  var options = {
-    switchUserAfterPostedMessage: true,
-    switchUserAfterBlankMessage: true
-  };
-
   $scope.addMessage = function () {
     //if there is a message in the input box
     if($scope.input) {
@@ -37,14 +37,14 @@ app.controller('ConversationController', function ($scope) {
       $('#input').focus();
 
       //switch active user
-      if(options.switchUserAfterPostedMessage) {
+      if($scope.options.switchUserAfterPostedMessage) {
         switchUser();
       }
     }
     //if the input box is empty
     else {
       //switch active user
-      if(options.switchUserAfterBlankMessage) {
+      if($scope.options.switchUserAfterBlankMessage) {
         switchUser();
       }
     }
@@ -54,14 +54,4 @@ app.controller('ConversationController', function ($scope) {
   showMessage(1, 'Goodbye!');
   showMessage(2, 'Hello!');
   showMessage(3, 'Goodbye!');
-});
-
-function saveSettings() {
-  options.switchUserAfterPostedMessage = $('#switch_user_after_posted_message_box').attr('checked');
-  options.switchUserAfterBlankMessage = $('#switch_user_after_blank_message_box').attr('checked');
-  $('#settings-modal').modal('hide');
-}
-
-$(document).ready(function() {
-  $('#settings-save-button').click(saveSettings);
 });

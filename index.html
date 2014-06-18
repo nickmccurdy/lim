@@ -13,8 +13,8 @@
     <link rel="apple-touch-icon" href="mobile_icon.png">
   </head>
 
-  <body>
-    <div class="container" ng-controller="ConversationController">
+  <body ng-controller="ConversationController">
+    <div class="container">
       <div>
         <button class="btn btn-default pull-right" href="#" data-target="#settings-modal" data-toggle="modal">
           <i class="glyphicon glyphicon-cog"></i> Settings
@@ -47,7 +47,7 @@
         <span class="input-group-btn">
           <input id="send-button" class="btn btn-primary" type="submit" value="Send">
         </span>
-      </div>
+      </form>
     </div>
 
     <div id="settings-modal" class="modal fade">
@@ -62,18 +62,17 @@
             <input type="text" ng-model="topic">
 
             <h4>Interface</h4>
-            <label for="switch_user_after_posted_message_box">
-              <input type="checkbox" id="switch_user_after_posted_message_box" checked>
+            <label for="switchUserAfterPostedMessage">
+              <input type="checkbox" ng-model="options.switchUserAfterPostedMessage">
               Switch user after a message is posted
             </label>
-            <label for="switch_user_after_blank_message_box">
-              <input type="checkbox" id="switch_user_after_blank_message_box" checked>
+            <label for="switchUserAfterBlankMessage">
+              <input type="checkbox" ng-model="options.switchUserAfterBlankMessage">
               Switch user after a blank message is entered
             </label>
           </div>
           <div class="modal-footer">
             <a href="#" class="btn btn-default" data-dismiss="modal" aria-hidden="true">Close</a>
-            <a href="#" class="btn btn-primary" id="settings-save-button">Save</a>
           </div>
         </div>
       </div>
