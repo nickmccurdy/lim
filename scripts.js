@@ -71,7 +71,6 @@ function postMessage() {
 function updateListMembers() {
   $('#member-list').html(memberList());
   $('#member-list .user-'+currentUID).addClass('active');
-  window.document.title = $('#topic').html()+': ' + users.join(', ');
 }
 
 function memberList() {
@@ -80,16 +79,7 @@ function memberList() {
   });
 }
 
-function setTopic() {
-  topic = $('#topic-input').val();
-  if(topic) {
-    $('#topic').html(topic);
-    updateListMembers();
-  }
-}
-
 function saveSettings() {
-  setTopic();
   options.switchUserAfterPostedMessage = $('#switch_user_after_posted_message_box').attr('checked');
   options.switchUserAfterBlankMessage = $('#switch_user_after_blank_message_box').attr('checked');
   $('#settings-modal').modal('hide');
@@ -99,5 +89,4 @@ $(document).ready(function() {
   updateListMembers();
 
   $('#settings-save-button').click(saveSettings);
-  $('#topic-button').click(setTopic);
 });
