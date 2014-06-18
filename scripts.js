@@ -5,10 +5,6 @@ var options = {
   switchUserAfterBlankMessage: true
 };
 
-$(document).bind('keyup keydown', function(e) {
-  shifted = e.shiftKey;
-});
-
 function postMessage() {
   var trimmedInput = $('#input').val().trim();
 
@@ -85,8 +81,8 @@ $(document).ready(function() {
 
   //when something is typed in the input box
   $('#input').keyup(function(e) {
-    //if it was return (without shift)
-    if(e.keyCode == 13 && !shifted) {
+    //if it was return
+    if(e.keyCode == 13) {
       postMessage();
     }
   });
