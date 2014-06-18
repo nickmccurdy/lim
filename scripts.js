@@ -14,7 +14,7 @@ app.controller('ConversationController', function ($scope) {
   }
 
   function switchUser() {
-    if($scope.currentUID < users.length-1) {
+    if($scope.currentUID < $scope.users.length-1) {
       $scope.currentUID++;
     }
     else {
@@ -34,9 +34,6 @@ app.controller('ConversationController', function ($scope) {
   showMessage(2, 'Hello!');
   showMessage(3, 'Goodbye!');
 });
-
-var users = ['User 1', 'User 2', 'User 3', 'User 4'];
-var currentUID = 0;
 
 var options = {
   switchUserAfterPostedMessage: true,
