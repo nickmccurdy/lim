@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="Local Instant Messenger">
   <head>
     <meta charset="utf-8">
     <!-- basic info -->
@@ -14,7 +14,7 @@
   </head>
 
   <body>
-    <div class="container">
+    <div class="container" ng-controller="ConversationController">
       <div>
         <button class="btn btn-default pull-right" href="#" data-target="#settings-modal" data-toggle="modal">
           <i class="glyphicon glyphicon-cog"></i> Settings
@@ -27,15 +27,20 @@
 
       <div class="row">
         <div class="col-md-9">
-          <ul id="conversation" class="list-group"></ul>
+          <ul id="conversation" class="list-group">
+            <li class="list-group-item" ng-repeat="message in messages">
+              <h4 class="list-group-item-heading">{{ message.user }}</h4>
+              <p class="list-group-item-text message">{{ message.message }}</p>
+            </li>
+          </ul>
         </div>
         <div id="member-list" class="col-md-3"></div>
       </div>
 
-      <div id="input-bar" class="input-group">
-        <input id="input" class="form-control" type="text" autofocus>
+      <form id="input-bar" class="input-group" ng-submit="addMessage()">
+        <input id="input" class="form-control" type="text" ng-model="input" autofocus>
         <span class="input-group-btn">
-          <button id="send-button" class="btn btn-primary">Send</button>
+          <input id="send-button" class="btn btn-primary" type="submit" value="Send">
         </span>
       </div>
     </div>
@@ -69,13 +74,6 @@
       </div>
     </div>
 
-    <script id="message-template" type="text/template">
-      <li class="list-group-item">
-        <h4 class="list-group-item-heading"><%= user %></h4>
-        <p class="list-group-item-text message"><%= message %></p>
-      </li>
-    </script>
-
     <script id="user-template" type="text/template">
       <div class="panel panel-default">
         <div class="panel-heading">Members</div>
@@ -90,6 +88,7 @@
     <!-- scripts -->
     <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular.min.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore-min.js"></script>
     <script src="scripts.js"></script>
     <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->

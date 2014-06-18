@@ -1,10 +1,49 @@
+var app = angular.module('Local Instant Messenger', []);
+
+app.controller('ConversationController', function ($scope) {
+  $scope.messages = [];
+  $scope.users = ['User 1', 'User 2', 'User 3', 'User 4'];
+  $scope.currentUID = 0;
+
+  function showMessage (uid, message) {
+    $scope.messages.push({
+      user: $scope.users[uid],
+      message: message
+    });
+    $(window).scrollTop($(document).height());
+  }
+
+  function switchUser() {
+    if($scope.currentUID < users.length-1) {
+      $scope.currentUID++;
+    }
+    else {
+      $scope.currentUID = 0;
+    }
+  }
+
+  $scope.addMessage = function () {
+    showMessage($scope.currentUID, $scope.input);
+    switchUser();
+    $scope.input = '';
+    $(window).scrollTop($(document).height());
+  };
+
+  showMessage(0, 'Hello!');
+  showMessage(1, 'Goodbye!');
+  showMessage(2, 'Hello!');
+  showMessage(3, 'Goodbye!');
+});
+
 var users = ['User 1', 'User 2', 'User 3', 'User 4'];
 var currentUID = 0;
+
 var options = {
   switchUserAfterPostedMessage: true,
   switchUserAfterBlankMessage: true
 };
 
+/*
 function postMessage() {
   var trimmedInput = $('#input').val().trim();
 
@@ -27,17 +66,7 @@ function postMessage() {
     }
   }
 }
-
-function showMessage(uid, message) {
-  messageCode = _.template($('#message-template').html(), {
-    uid: uid,
-    user: users[uid],
-    message: message
-  });
-  $(messageCode).hide().appendTo('#conversation').slideDown(200, function() {
-    $(window).scrollTop($(document).height());
-  });
-}
+*/
 
 function updateListMembers() {
   $('#member-list').html(memberList());
@@ -49,16 +78,6 @@ function memberList() {
   return _.template($('#user-template').html(), {
     user: users
   });
-}
-
-function switchUser() {
-  if(currentUID < users.length-1) {
-    currentUID++;
-  }
-  else {
-    currentUID = 0;
-  }
-  updateListMembers();
 }
 
 function setTopic() {
@@ -79,19 +98,6 @@ function saveSettings() {
 $(document).ready(function() {
   updateListMembers();
 
-  //when something is typed in the input box
-  $('#input').keyup(function(e) {
-    //if it was return
-    if(e.keyCode == 13) {
-      postMessage();
-    }
-  });
   $('#settings-save-button').click(saveSettings);
-  $('#send-button').click(postMessage);
   $('#topic-button').click(setTopic);
-
-  showMessage(0, 'Hello!');
-  showMessage(1, 'Goodbye!');
-  showMessage(2, 'Hello!');
-  showMessage(3, 'Goodbye!');
 });
