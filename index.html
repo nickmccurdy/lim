@@ -57,24 +57,28 @@
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="icon-remove icon-white"></i></button>
             <h3>Settings</h3>
           </div>
-          <div class="modal-body">
-            <h4>Topic</h4>
-            <input type="text" class="form-control" ng-model="topic">
 
-            <h4>Interface</h4>
-            <div class="checkbox">
-              <label>
-                <input type="checkbox" ng-model="options.switchUserAfterPostedMessage">
-                Switch user after a message is posted
-              </label>
-            </div>
-            <div class="checkbox">
-              <label>
-                <input type="checkbox" ng-model="options.switchUserAfterBlankMessage">
-                Switch user after a blank message is entered
-              </label>
-            </div>
+          <div class="modal-body">
+            <form role="form">
+              <div class="form-group">
+                <label for="topic">Topic</label>
+                <input type="text" class="form-control" id="topic" ng-model="topic" placeholder="Local Instant Messenger">
+              </div>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" ng-model="options.switchUserAfterPostedMessage">
+                  Switch user after a message is posted
+                </label>
+              </div>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" ng-model="options.switchUserAfterBlankMessage">
+                  Switch user after a blank message is entered
+                </label>
+              </div>
+            </form>
           </div>
+
           <div class="modal-footer">
             <a href="#" class="btn btn-default" data-dismiss="modal" aria-hidden="true">Close</a>
           </div>
