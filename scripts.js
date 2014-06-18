@@ -23,10 +23,12 @@ app.controller('ConversationController', function ($scope) {
   }
 
   $scope.addMessage = function () {
-    showMessage($scope.currentUID, $scope.input);
     switchUser();
-    $scope.input = '';
-    $(window).scrollTop($(document).height());
+    if ($scope.input.length) {
+      showMessage($scope.currentUID, $scope.input);
+      $scope.input = '';
+      $(window).scrollTop($(document).height());
+    }
   };
 
   showMessage(0, 'Hello!');
