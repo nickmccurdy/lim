@@ -68,17 +68,6 @@ function postMessage() {
 }
 */
 
-function updateListMembers() {
-  $('#member-list').html(memberList());
-  $('#member-list .user-'+currentUID).addClass('active');
-}
-
-function memberList() {
-  return _.template($('#user-template').html(), {
-    user: users
-  });
-}
-
 function saveSettings() {
   options.switchUserAfterPostedMessage = $('#switch_user_after_posted_message_box').attr('checked');
   options.switchUserAfterBlankMessage = $('#switch_user_after_blank_message_box').attr('checked');
@@ -86,7 +75,5 @@ function saveSettings() {
 }
 
 $(document).ready(function() {
-  updateListMembers();
-
   $('#settings-save-button').click(saveSettings);
 });

@@ -32,7 +32,14 @@
             </li>
           </ul>
         </div>
-        <div id="member-list" class="col-md-3"></div>
+        <div id="member-list" class="col-md-3">
+          <div class="panel panel-default">
+            <div class="panel-heading">Members</div>
+            <div class="list-group">
+              <a href="#" class="list-group-item" ng-repeat="user in users" ng-class="{active: user === users[currentUID]}">{{ user }}</a>
+            </div>
+          </div>
+        </div>
       </div>
 
       <form id="input-bar" class="input-group" ng-submit="addMessage()">
@@ -71,17 +78,6 @@
         </div>
       </div>
     </div>
-
-    <script id="user-template" type="text/template">
-      <div class="panel panel-default">
-        <div class="panel-heading">Members</div>
-        <div class="list-group">
-          <% _.each(users, function(user, uid) { %>
-            <a href="#" class="list-group-item user-<%= uid %>"><%= user %></a>
-          <% }); %>
-        </div>
-      </div>
-    </script>
 
     <!-- scripts -->
     <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
