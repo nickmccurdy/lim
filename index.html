@@ -79,11 +79,11 @@
     <script id="user-template" type="text/template">
       <div class="panel panel-default">
         <div class="panel-heading">Members</div>
-        <ul class="list-group">
+        <div class="list-group">
           <% _.each(users, function(user, uid) { %>
-            <li class="list-group-item user-<%= uid %>"><%= user %></li>
+            <a href="#" class="list-group-item user-<%= uid %>"><%= user %></a>
           <% }); %>
-        </ul>
+        </div>
       </div>
     </script>
 
