@@ -22,12 +22,31 @@ app.controller('ConversationController', function ($scope) {
     }
   }
 
+  var options = {
+    switchUserAfterPostedMessage: true,
+    switchUserAfterBlankMessage: true
+  };
+
   $scope.addMessage = function () {
-    switchUser();
-    if ($scope.input.length) {
+    //if there is a message in the input box
+    if($scope.input) {
+      //submit a new IM
+      // TODO: check if we need to .trim() the input
       showMessage($scope.currentUID, $scope.input);
       $scope.input = '';
-      $(window).scrollTop($(document).height());
+      $('#input').focus();
+
+      //switch active user
+      if(options.switchUserAfterPostedMessage) {
+        switchUser();
+      }
+    }
+    //if the input box is empty
+    else {
+      //switch active user
+      if(options.switchUserAfterBlankMessage) {
+        switchUser();
+      }
     }
   };
 
@@ -36,36 +55,6 @@ app.controller('ConversationController', function ($scope) {
   showMessage(2, 'Hello!');
   showMessage(3, 'Goodbye!');
 });
-
-var options = {
-  switchUserAfterPostedMessage: true,
-  switchUserAfterBlankMessage: true
-};
-
-/*
-function postMessage() {
-  var trimmedInput = $('#input').val().trim();
-
-  //if there is a message in the input box
-  if(trimmedInput) {
-    //submit a new IM
-    showMessage(currentUID, trimmedInput);
-    $('#input').val('');
-    $('#input').focus();
-    //switch active user
-    if(options.switchUserAfterPostedMessage) {
-      switchUser();
-    }
-  }
-  //if the input box is empty
-  else {
-    //switch active user
-    if(options.switchUserAfterBlankMessage) {
-      switchUser();
-    }
-  }
-}
-*/
 
 function saveSettings() {
   options.switchUserAfterPostedMessage = $('#switch_user_after_posted_message_box').attr('checked');
