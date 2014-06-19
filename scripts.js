@@ -24,6 +24,10 @@ app.controller('ConversationController', function ($scope) {
     }
   }
 
+  $scope.setActive = function (uid) {
+    $scope.currentUID = uid;
+  };
+
   $scope.addMessage = function () {
     //if there is a message in the input box
     if($scope.input) {
