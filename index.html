@@ -43,7 +43,7 @@
       </div>
 
       <form id="input-bar" class="input-group" ng-submit="addMessage()">
-        <input id="input" class="form-control" type="text" ng-model="input" autofocus>
+        <input id="input" class="form-control" type="text" ng-model="input" placeholder="{{ users[currentUID] }}'s message" autofocus>
         <span class="input-group-btn">
           <input id="send-button" class="btn btn-primary" type="submit" value="Send">
         </span>
