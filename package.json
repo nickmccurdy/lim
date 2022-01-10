@@ -1,10 +1,9 @@
 {
   "scripts": {
-    "test": "grunt"
+    "test": "jshint && csslint --quiet *.css"
   },
   "devDependencies": {
-    "grunt": "^1.4.1",
-    "grunt-contrib-csslint": "^2.0.0",
-    "grunt-contrib-jshint": "^3.1.1"
+    "csslint": "^1.0.5",
+    "jshint": "^2.13.3"
   }
 }
