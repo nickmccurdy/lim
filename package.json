@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "test": "jshint && csslint --quiet *.css"
+    "test": "jshint --exclude-path .gitignore . && csslint --quiet *.css"
   },
   "devDependencies": {
     "csslint": "^1.0.5",
